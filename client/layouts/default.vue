@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 v-if="us">Login {{ us }}</h1>
     <nav>
       <ul>
         <li>
@@ -16,6 +17,8 @@
     <nuxt/>
   </div>
 </template>
+
+
 
 <style>
 html {
@@ -36,3 +39,23 @@ html {
 
 
 </style>
+
+<script>
+
+export default {
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+
+
+   computed: {
+      us () {
+        return this.$store.getters.user
+      }
+    }
+}
+
+</script>

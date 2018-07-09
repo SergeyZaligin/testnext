@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <h1>
-        Login
+
       </h1>
       <form action="" method="post">
         <div class="input-group">
@@ -48,13 +48,18 @@ export default {
       }
       this.$store.dispatch('loginUser', user)
         .then(()=>{
-          this.$router.push('/')
+          this.$router.push('/registration')
         })
         .catch(error => {
           console.log(error)
         })
     }
-  }
+  },
+   computed: {
+      us () {
+        return this.$store.getters.user
+      }
+    }
 }
 
 </script>
