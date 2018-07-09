@@ -1,8 +1,8 @@
 {
-  "name": "nuxtserverapi",
+  "name": "y",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "sergey <codename.cobweb@gmail.com>",
+  "author": "suslikEst",
   "private": true,
   "scripts": {
     "dev": "nuxt",
