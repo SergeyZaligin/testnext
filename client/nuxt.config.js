@@ -1,6 +1,6 @@
 module.exports = {
-  mode: 'spa',
-  plugins: [{ src: '~/plugins/localStorage.js', ssr: false,mode: 'spa' }],
+
+  plugins: [{ src: '~/plugins/localStorage.js' }],
 /*
   ** Headers of the page
   */

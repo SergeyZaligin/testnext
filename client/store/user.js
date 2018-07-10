@@ -46,9 +46,9 @@ export default {
           password
         })
         //console.log(user.data.token);
-        localStorage.setItem('auth-token', user.data.token);
-        let token = localStorage.getItem('auth-token');
-        commit('setUser', token)
+        //localStorage.setItem('auth-token', user.data.token);
+       // let token = localStorage.getItem('auth-token');
+        commit('setUser', user)
 
       } catch (error) {
         console.log(error.message);
@@ -73,5 +73,5 @@ export default {
     }
   },
 
-  plugins: [createPersistedState()]
+
 }
