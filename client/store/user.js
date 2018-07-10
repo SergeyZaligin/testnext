@@ -45,7 +45,7 @@ export default {
           email,
           password
         })
-        // console.log(user.data.token);
+        console.log(user);
         commit('setUser', user.data.token)
 
       } catch (error) {
