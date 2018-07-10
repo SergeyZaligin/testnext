@@ -45,9 +45,7 @@ export default {
           email,
           password
         })
-        //console.log(user.data.token);
-        //localStorage.setItem('auth-token', user.data.token);
-       // let token = localStorage.getItem('auth-token');
+        // console.log(user.data.token);
         commit('setUser', user.data.token)
 
       } catch (error) {
@@ -55,16 +53,12 @@ export default {
         throw error
       }
     },
-    autoLoginUser({
-      commit
-    }, payload) {
 
-    },
-    logoutUser({
-      commit
-    }) {
-
+    logout ({commit}) {
+      document.cookie = 'auth_token' + '=; Max-Age=0';
+      commit('setUser', null);
     }
+
   },
 
   getters: {

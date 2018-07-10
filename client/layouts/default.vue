@@ -10,7 +10,7 @@
           <nuxt-link to="/registration">Registration</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/logout">Logout</nuxt-link>
+          <a @click="logout($event)" href="#">Logout</a>
         </li>
       </ul>
     </nav>
@@ -43,6 +43,7 @@ html {
 <script>
 
 export default {
+
   data () {
     return {
       email: '',
@@ -50,12 +51,21 @@ export default {
     }
   },
 
-
-   computed: {
-      us () {
-        return this.$store.getters.user
-      }
+  methods: {
+    logout($event){
+      $event.preventDefault();
+      console.log('Logout');
+      this.$store.dispatch('logout');
+      document.cookie = 'auth_token' + '=; Max-Age=0';
     }
+  },
+
+  computed: {
+    us () {
+      return this.$store.getters.user
+    }
+  }
+
 }
 
 </script>

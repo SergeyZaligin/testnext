@@ -7,7 +7,7 @@ import cookie from 'cookie'
 
 export default ({store, req, isDev}) => {
   createPersistedState({
-      key: 'your_key',
+      key: 'auth_token',
       paths: ['user'],
       storage: {
         getItem: (key) => process.client ? Cookies.getJSON(key) : cookie.parse(req.headers.cookie||'')[key],
