@@ -1,7 +1,7 @@
 # y
 
 > Nuxt.js project
-
+<a href="https://www.npmjs.com/package/@nuxtjs/auth/v/4.0.0-rc.3">https://www.npmjs.com/package/@nuxtjs/auth/v/4.0.0-rc.3</a>
 ## Build Setup
 
 ``` bash

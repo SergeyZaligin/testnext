@@ -1,7 +1,9 @@
 module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
-
+  modules: [
+    '@nuxtjs/auth'
+ ],
   router: {
     middleware: ['authenticated']
   },
