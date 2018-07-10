@@ -46,8 +46,22 @@ export default {
           password
         })
         console.log(user);
-        commit('setUser', user.data.token)
+        commit('setUser', user.data.token);
 
+      } catch (error) {
+        console.log(error.message);
+        throw error
+      }
+    },
+
+    async registration ({ commit }, { email, password }) {
+      try {
+        const user = await axios.post(`http://localhost:3001/api/auth/register`, {
+          email,
+          password
+        });
+        console.log(user);
+        commit('setUser', user.data.token);
       } catch (error) {
         console.log(error.message);
         throw error

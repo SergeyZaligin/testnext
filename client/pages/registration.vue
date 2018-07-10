@@ -58,7 +58,7 @@ export default {
         email: this.email,
         password: this.password
       }
-      this.$store.dispatch('registerUser', user)
+      this.$store.dispatch('registration', user)
         .then(()=>{
           this.$router.push('/')
         })

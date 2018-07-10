@@ -57,6 +57,9 @@ module.exports.register = async function(req, res) {
   } else {
     const salt = bcryptjs.genSaltSync(10)
     const password = req.body.password
+    const token = jwt.sign({
+      email: req.body.email
+    }, keys.secretKey, { expiresIn: 60 * 60 })
     const user = new User({
       email: req.body.email,
       password: bcryptjs.hashSync(password, salt),
@@ -65,7 +68,10 @@ module.exports.register = async function(req, res) {
 
     try {
       await user.save()
-      res.status(201).json(user)
+      res.status(201).json({
+        token: `Bearer ${token}`,
+        role: user.role
+      })
     } catch (error) {
       errorHandler(res, error)
     }
