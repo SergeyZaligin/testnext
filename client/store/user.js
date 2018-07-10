@@ -48,7 +48,7 @@ export default {
         //console.log(user.data.token);
         //localStorage.setItem('auth-token', user.data.token);
        // let token = localStorage.getItem('auth-token');
-        commit('setUser', user)
+        commit('setUser', user.data.token)
 
       } catch (error) {
         console.log(error.message);
