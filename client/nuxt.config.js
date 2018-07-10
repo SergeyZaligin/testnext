@@ -1,11 +1,15 @@
 module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
+
+  router: {
+    middleware: ['authenticated']
+  },
 /*
   ** Headers of the page
   */
   head: {
-    title: 'y',
+    title: 'nuxtjs',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
