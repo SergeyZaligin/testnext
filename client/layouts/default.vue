@@ -60,6 +60,7 @@ export default {
       console.log('Logout');
       this.$store.dispatch('logout');
       document.cookie = 'auth_token' + '=; Max-Age=0';
+      this.$router.push('/login')
     }
   },
 
