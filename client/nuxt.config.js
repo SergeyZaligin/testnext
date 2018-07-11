@@ -1,12 +1,7 @@
 module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
-  modules: [
-    '@nuxtjs/auth'
- ],
- token: {
-  prefix: 'auth_token'
-},
+
 
 
 /*
