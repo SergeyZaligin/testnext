@@ -5,7 +5,14 @@ module.exports = {
     '@nuxtjs/auth'
  ],
   router: {
-    middleware: ['authenticated']
+    routes: [
+      {
+        path: '/about',
+        component: 'pages/about.vue',
+        middleware: ['auth']
+      }
+    ]
+
   },
 /*
   ** Headers of the page
