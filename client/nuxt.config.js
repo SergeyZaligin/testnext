@@ -4,9 +4,11 @@ module.exports = {
   modules: [
     '@nuxtjs/auth'
  ],
-  router: {
-    middleware: ['authenticated']
-  },
+ token: {
+  prefix: 'auth_token'
+},
+
+
 /*
   ** Headers of the page
   */

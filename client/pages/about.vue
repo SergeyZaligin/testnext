@@ -3,7 +3,10 @@
 </template>
 
 <script>
-  export default {
-    middleware: 'authenticated'
-  }
+
+export default {
+  middleware: 'authenticated'
+}
+
+
 </script>
