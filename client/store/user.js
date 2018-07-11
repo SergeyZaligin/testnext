@@ -4,20 +4,23 @@ import createPersistedState from 'vuex-persistedstate';
 import * as Cookie from 'js-cookie';
 
 class User {
-  constructor(token) {
-    this.token = token
+  constructor(token, role) {
+    this.token = token;
+    this.role = role;
   }
 }
 
 export default {
 
   state: {
-    user: null
+    user: null,
+    role: ''
   },
 
   mutations: {
     setUser(state, payload) {
-      state.user = payload
+      console.log('PAYLOAD', payload);
+      state.user = payload;
     }
   },
 
@@ -46,7 +49,10 @@ export default {
           password
         })
         console.log(user);
-        commit('setUser', user.data.token);
+        commit('setUser', {
+           token: user.data.token,
+            role: user.data.role
+        });
 
       } catch (error) {
         console.log(error.message);
@@ -70,7 +76,7 @@ export default {
 
     logout ({commit}) {
       document.cookie = 'auth_token' + '=; Max-Age=0';
-      commit('setUser', null);
+      commit('setUser', null, null);
     }
 
   },

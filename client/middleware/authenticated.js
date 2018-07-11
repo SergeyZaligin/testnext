@@ -1,11 +1,11 @@
 
-export default function ({ store, error, redirect }) {
-  if (!store.state.user.user) {
-    // error({
-    //   message: 'You are not connected',
-    //   statusCode: 403
-    // })
-    return redirect('/login')
+export default function ({ store, error }) {
+  console.log("USER", store.state);
+  if (store.state.user.user == null) {
+    error({
+      message: 'You are not connected',
+      statusCode: 403
+    })
   }
 
 }

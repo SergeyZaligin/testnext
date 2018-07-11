@@ -1,6 +1,7 @@
 module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
+<<<<<<< HEAD
   modules: [
     '@nuxtjs/auth'
  ],
@@ -14,6 +15,11 @@ module.exports = {
     ]
 
   },
+=======
+
+
+
+>>>>>>> 17ea2b2afea0d182a205b21a804aa772688fb77c
 /*
   ** Headers of the page
   */
