@@ -9,14 +9,11 @@ class User {
   }
 }
 
-
-export const state = () => ({
-  user: null
-})
-
 export default {
 
-
+  state: {
+    user: null
+  },
 
   mutations: {
     setUser(state, payload) {
