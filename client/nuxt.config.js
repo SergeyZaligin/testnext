@@ -1,25 +1,7 @@
 module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
-<<<<<<< HEAD
-  modules: [
-    '@nuxtjs/auth'
- ],
-  router: {
-    routes: [
-      {
-        path: '/about',
-        component: 'pages/about.vue',
-        middleware: ['auth']
-      }
-    ]
 
-  },
-=======
-
-
-
->>>>>>> 17ea2b2afea0d182a205b21a804aa772688fb77c
 /*
   ** Headers of the page
   */
