@@ -5,7 +5,7 @@ const bodyparser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const authRoutes = require('./routes/auth')
-const articlesRoutes = require('./routes/articles')
+const articlesRoutes = require('./routes/articles/articles')
 const app = express()
 
 const keys = require('./config/keys')

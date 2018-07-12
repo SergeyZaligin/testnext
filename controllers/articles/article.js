@@ -1,5 +1,5 @@
-const Article = require('../models/Article')
-const errorHandler = require('../utils/errorHandler')
+const Article = require('../../models/Articles/Article')
+const errorHandler = require('../../utils/errorHandler')
 
 /**
  * Get all articles
@@ -7,11 +7,11 @@ const errorHandler = require('../utils/errorHandler')
  * @param {*} res 
  */
 module.exports.getAllArticle = async function (req, res) {
-    const articles = await User.findOne({
+    const articles = await Article.findOne({
       email: req.body.email
     })
   
-    if (candidate) {
+    if (articles) {
       
     } else {
      
