@@ -13,6 +13,12 @@
           <nuxt-link to="/registration">Registration</nuxt-link>
         </li>
         <li>
+          <nuxt-link to="/admin">Admin</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/articles">Articles</nuxt-link>
+        </li>
+        <li>
           <a @click="logout($event)" href="#">Logout</a>
         </li>
       </ul>
