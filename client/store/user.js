@@ -19,8 +19,8 @@ export default {
 
   mutations: {
     setUser(state, payload) {
-      console.log('PAYLOAD', payload);
-      state.user = payload;
+      state.user = payload.token;
+      state.role = payload.role;
     }
   },
 
@@ -76,7 +76,7 @@ export default {
 
     logout ({commit}) {
       document.cookie = 'auth_token' + '=; Max-Age=0';
-      commit('setUser', null, null);
+      commit('setUser', { token: null, role: '' });
     }
 
   },
