@@ -2,8 +2,10 @@ export default function ({ store, error, redirect }) {
 
   console.log("USER", store.state);
 
-  if (store.state.user.role !== 'admin' || store.state.user.user === null) {
-    return redirect('/login')
+  if (store.state.user.user !== null && store.state.user.role == 'admin') {
+     return true;
+  }else{
+     return redirect('/login');
   }
 
 }
