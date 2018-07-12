@@ -8,5 +8,4 @@ export default {
   middleware: 'authadmin'
 }
 
-
 </script>
