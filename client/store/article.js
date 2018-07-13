@@ -19,7 +19,7 @@ export default {
   actions: {
     async getArticles ({ commit }) {
       try {
-        const articles = await axios.get(`/api/articles`);
+        const articles = await axios.get(`http://localhost:3001/api/articles/2`);
         commit('setArticles', articles);
         console.log(articles);
       } catch (error) {
