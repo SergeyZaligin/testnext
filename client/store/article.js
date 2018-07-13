@@ -48,8 +48,8 @@ export default {
       //       el.text
       //     ))
       //   });
-        commit('loadArticles', articles.data.articles);
-        console.log("resultArticles", articles.data.articles);
+        commit('loadArticles', articles.data);
+        console.log("resultArticles", articles.data);
       } catch (error) {
         console.log(error.message);
         throw error

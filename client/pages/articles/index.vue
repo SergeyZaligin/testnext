@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>Articles page</h1>
-    <ul class="pagination" @click="onSubmit">{{ art }}</ul>
+    <ul class="pagination" @click="onSubmit">{{ art.current }}</ul>
   </section>
 </template>
 
