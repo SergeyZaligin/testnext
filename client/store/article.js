@@ -5,14 +5,13 @@ import * as Cookie from 'js-cookie';
 
 
 class Article {
-  constructor (visible = 1, title, slug, preview, imageThubnail = '', text, id = null) {
-    this.visible = visible
+  constructor (title, slug, preview, imageThubnail = '', text) {
+
     this.title = title
     this.slug = slug
     this.preview = preview
     this.imageThubnail = imageThubnail
     this.text = text
-    this.id = id
   }
 }
 
@@ -39,18 +38,18 @@ export default {
       try {
         const articles = await axios.get(`http://localhost:3001/api/articles/2`);
 
-       articles.data.articles.forEach(el => {
+      //  articles.data.forEach(el => {
 
-          resultArticles.push(new Article(
-            el.title,
-            el.slug,
-            el.preview,
-            el.imageThubnail,
-            el.text
-          ))
-        });
-        commit('loadArticles', resultArticles);
-        console.log("ARTICLE", articles);
+      //     resultArticles.push(new Article(
+      //       el.title,
+      //       el.slug,
+      //       el.preview,
+      //       el.imageThubnail,
+      //       el.text
+      //     ))
+      //   });
+        commit('loadArticles', articles.data);
+        console.log("resultArticles", articles.data);
       } catch (error) {
         console.log(error.message);
         throw error

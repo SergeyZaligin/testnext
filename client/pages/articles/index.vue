@@ -8,7 +8,17 @@
 <script>
 
 export default {
+  created(){
+      this.$store.dispatch('getArticles')
+        .then(()=>{
+
+        })
+        .catch(error => {
+          console.log(error)
+        })
+  },
   methods: {
+
 onSubmit () {
 
       this.$store.dispatch('getArticles')
