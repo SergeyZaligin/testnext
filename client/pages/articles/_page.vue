@@ -18,8 +18,13 @@
 <script>
 
 export default {
+  data () {
+    return {
+      page: this.$route.params['page'] || 1
+    }
+  },
   created(){
-      this.$store.dispatch('getArticles', 4)
+      this.$store.dispatch('getArticles', this.page)
         .then(()=>{
 
         })
@@ -30,8 +35,8 @@ export default {
   methods: {
 
 onSubmit () {
-
-      this.$store.dispatch('getArticles', 4)
+      //console.log('This page', this.page);
+      this.$store.dispatch('getArticles', this.page)
         .then(()=>{
 
         })

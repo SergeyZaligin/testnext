@@ -34,7 +34,7 @@ export default {
     async getArticles ({ commit }, payload) {
 
       const resultArticles = [];
-      const page = payload;
+      const page = payload || 1;
       console.log('PAGE==>>', page);
       try {
         const articles = await axios.get(`http://localhost:3001/api/articles/${page}`);
