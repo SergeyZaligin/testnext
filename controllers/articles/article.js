@@ -67,3 +67,31 @@ module.exports.getOneArticle = async function (req, res) {
       console.log(article);
     }
   }
+
+  /**
+   * Create article
+   * @param {*} req 
+   * @param {*} res 
+   */
+  module.exports.create = async function (req, res) {
+    const article = new Article({
+        visible: req.body.visible,
+        description: req.body.description,
+        keywords: req.body.keywords,
+        title: req.body.title,
+        slug: req.body.slug,
+        preview: req.body.preview,
+        seoPreview: req.body.seoPreview,
+        imageThubnail: req.body.imageThubnail,
+        text: req.body.text,
+        category: req.body.category,
+        user: req.user.id,
+        sort: req.body.sort
+    })
+    try {
+        await article.save()
+        res.status(201).json(article)
+    } catch (error) {
+        errorHandler(res, error)
+    }
+}
