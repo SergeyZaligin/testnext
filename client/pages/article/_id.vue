@@ -13,7 +13,7 @@ export default {
       id: this.$route.params['id']
     }
   },
-  insertBefore(){
+  created(){
       this.$store.dispatch('getArticleById', this.id)
         .then(()=>{
 

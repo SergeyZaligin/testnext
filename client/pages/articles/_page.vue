@@ -28,7 +28,7 @@ export default {
       page: this.$route.params['page'] || 1
     }
   },
-  insertBefore(){
+  created(){
       this.$store.dispatch('getArticles', this.page)
         .then(()=>{
 
