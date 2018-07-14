@@ -18,7 +18,8 @@ class Article {
 export default {
 
   state: {
-    articles: []
+    articles: [],
+    article: []
   },
 
   mutations: {
@@ -27,6 +28,9 @@ export default {
     },
     loadArticles (state, { articles, page }) {
       state.articles = articles
+    },
+    loadArticle (state, { article }) {
+      state.article = article
     }
   },
 
@@ -38,17 +42,6 @@ export default {
       console.log('PAGE==>>', page);
       try {
         const articles = await axios.get(`http://localhost:3001/api/articles/${page}`);
-
-      //  articles.data.forEach(el => {
-
-      //     resultArticles.push(new Article(
-      //       el.title,
-      //       el.slug,
-      //       el.preview,
-      //       el.imageThubnail,
-      //       el.text
-      //     ))
-      //   });
         commit('loadArticles', {articles: articles.data});
         console.log("resultArticles", articles.data);
       } catch (error) {
@@ -56,11 +49,30 @@ export default {
         throw error
       }
     },
+
+    async getArticleById ({ commit }, payload) {
+
+      const id = payload;
+      console.log('ID ====>', id);
+
+      try {
+        const article = await axios.get(`http://localhost:3001/api/article/${id}`);
+        commit('loadArticle', {article: article.data});
+        console.log("resultArticle", article.data);
+      } catch (error) {
+        console.log(error.message);
+        throw error
+      }
+    },
+
   },
 
   getters: {
     articles(state) {
       return state.articles;
+    },
+    article(state) {
+      return state.article;
     }
   }
 

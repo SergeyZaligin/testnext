@@ -4,14 +4,19 @@
     <ul class="articles">
       <li
         v-for="article of art.articles"
-        :key="article.id"
+        :key="article._id"
       >
-      <nuxt-link to="/">{{ article.title }}</nuxt-link>
+      <nuxt-link :to="`/article/${ article._id }`">{{ article.title }}</nuxt-link>
       </li>
     </ul>
     <ul class="pagination">
-      <li @click="onSubmit">Pag</li>
+      <li v-for="item of art.pages" :key="item">
+        <nuxt-link :to="`/articles/${item}`">{{ item }}</nuxt-link>
+      </li>
     </ul>
+    <!-- <ul class="pagination">
+      <li @click="onSubmit">Pag</li>
+    </ul> -->
   </section>
 </template>
 
@@ -23,7 +28,7 @@ export default {
       page: this.$route.params['page'] || 1
     }
   },
-  created(){
+  insertBefore(){
       this.$store.dispatch('getArticles', this.page)
         .then(()=>{
 

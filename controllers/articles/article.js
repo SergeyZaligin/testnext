@@ -11,15 +11,18 @@ module.exports.getAllArticle = async function (req, res) {
     
     try {
       let perPage = 5;
-      let page = req.params.page || 1;
+      let cnt = await Article
+      .find({}).count();
+      let page = +req.params.page || 1;
       const articles = await Article
       .find({})
       .skip((perPage * page) - perPage)
-      .limit(perPage);
+      .limit(+perPage);
       res.status(200).json({
         articles,
+        count: cnt,
         current: page,
-        pages: Math.ceil(req.params.page / perPage)
+        pages: Math.ceil(cnt / perPage)
       });
     } catch (error) {
       errorHandler(res, error);

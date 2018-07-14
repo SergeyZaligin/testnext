@@ -6,6 +6,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const authRoutes = require('./routes/auth')
 const articlesRoutes = require('./routes/articles/articles')
+const articleRoutes = require('./routes/articles/article')
 const app = express()
 
 const keys = require('./config/keys')
@@ -33,5 +34,6 @@ app.use(cors())
 
 app.use('/api/auth', authRoutes)
 app.use('/api/articles', articlesRoutes)
+app.use('/api/article', articleRoutes)
 
 module.exports = app
