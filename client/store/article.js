@@ -25,18 +25,19 @@ export default {
     createArticle (state, payload) {
       state.articles.push(payload)
     },
-    loadArticles (state, payload) {
-      state.articles = payload
+    loadArticles (state, { articles, page }) {
+      state.articles = articles
     }
   },
 
   actions: {
-    async getArticles ({ commit }) {
+    async getArticles ({ commit }, payload) {
 
       const resultArticles = [];
-
+      const page = payload;
+      console.log('PAGE==>>', page);
       try {
-        const articles = await axios.get(`http://localhost:3001/api/articles/2`);
+        const articles = await axios.get(`http://localhost:3001/api/articles/${page}`);
 
       //  articles.data.forEach(el => {
 
@@ -48,7 +49,7 @@ export default {
       //       el.text
       //     ))
       //   });
-        commit('loadArticles', articles.data);
+        commit('loadArticles', {articles: articles.data});
         console.log("resultArticles", articles.data);
       } catch (error) {
         console.log(error.message);
@@ -61,7 +62,6 @@ export default {
     articles(state) {
       return state.articles;
     }
-  },
-
+  }
 
 }

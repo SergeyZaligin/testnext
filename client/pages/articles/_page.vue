@@ -1,7 +1,17 @@
 <template>
   <section>
-    <h1>Articles page</h1>
-    <ul class="pagination" @click="onSubmit">{{ art.current }}</ul>
+    <h1>Article page</h1>
+    <ul class="articles">
+      <li
+        v-for="article of art.articles"
+        :key="article.id"
+      >
+      <nuxt-link to="/">{{ article.title }}</nuxt-link>
+      </li>
+    </ul>
+    <ul class="pagination">
+      <li @click="onSubmit">Pag</li>
+    </ul>
   </section>
 </template>
 
@@ -9,7 +19,7 @@
 
 export default {
   created(){
-      this.$store.dispatch('getArticles')
+      this.$store.dispatch('getArticles', 4)
         .then(()=>{
 
         })
@@ -21,7 +31,7 @@ export default {
 
 onSubmit () {
 
-      this.$store.dispatch('getArticles')
+      this.$store.dispatch('getArticles', 4)
         .then(()=>{
 
         })
