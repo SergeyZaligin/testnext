@@ -52,11 +52,11 @@ export default {
 
     async getArticleById ({ commit }, payload) {
 
-      const id = payload;
-      console.log('ID ====>', id);
+      const slug = payload;
+      console.log('slug ====>', slug);
 
       try {
-        const article = await axios.get(`http://localhost:3001/api/article/${id}`);
+        const article = await axios.get(`http://localhost:3001/api/article/${slug}`);
         commit('loadArticle', {article: article.data});
         console.log("resultArticle", article.data);
       } catch (error) {

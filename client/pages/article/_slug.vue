@@ -10,11 +10,11 @@
 export default {
   data () {
     return {
-      id: this.$route.params['id']
+      slug: this.$route.params['slug']
     }
   },
   created(){
-      this.$store.dispatch('getArticleById', this.id)
+      this.$store.dispatch('getArticleById', this.slug)
         .then(()=>{
 
         })

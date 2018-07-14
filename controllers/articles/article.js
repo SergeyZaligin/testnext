@@ -39,7 +39,7 @@ module.exports.getOneArticle = async function (req, res) {
   
   try {
     const article = await Article.findOne({
-      _id: req.params.id
+      slug: req.params.slug
     });
     res.status(200).json(article);
   } catch (error) {

@@ -6,7 +6,7 @@
         v-for="article of art.articles"
         :key="article._id"
       >
-      <nuxt-link :to="`/article/${ article._id }`">{{ article.title }}</nuxt-link>
+      <nuxt-link :to="`/article/${ article.slug }`">{{ article.title }}</nuxt-link>
       </li>
     </ul>
     <ul class="pagination">
