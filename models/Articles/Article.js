@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 
 const articleSchema = new Schema({
@@ -7,72 +7,58 @@ const articleSchema = new Schema({
     type: Boolean,
     default: 1
   },
+  description: {
+    type: String,
+    default: ''
+  },
+  keywords: {
+    type: String,
+    default: ''
+  },
   title: {
     type: String,
     required: true
   },
   slug: {
-    type: String
+    type: String,
+    required: true,
+    unique: true
   },
   preview: {
-    type: String
+    type: String,
+    default: ''
+  },
+  seoPreview: {
+    type: String,
+    default: ''
   },
   imageThubnail: {
       type: String,
       default: ''
   },
   text: {
-    type: String
+    type: String,
+    default: ''
+  },
+  category: {
+    ref: 'categories',
+    type: Schema.Types.ObjectId
+  },
+  user: {
+    ref: 'users',
+    type: Schema.Types.ObjectId
+  },
+  sort: {
+    type: Number,
+    default: 1
   }
+},
+{
+  timestamps: { 
+    createdAt: 'created_at', 
+    updatedAt: 'updated_at' 
+  }
+}
+);
 
-});
-
-
-// const articleSchema = new Schema({
-//   visible: {
-//     type: Boolean,
-//     default: 0
-//   },
-//   title: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   slug: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   description: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   keywords: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   preview: {
-//     type: String,
-//     required: true
-//   },
-//   seoPreview: {
-//     type: String,
-//     required: true
-//   },
-//   imageThubnail: {
-//       type: String,
-//       default: ''
-//   },
-//   text: {
-//     type: String,
-//     required: true
-//   },
-//   user: {
-//     ref: 'users',
-//     type: Schema.Types.ObjectId
-//   }
-// })
-
-module.exports = mongoose.model('article', articleSchema)
+module.exports = mongoose.model('article', articleSchema);

@@ -1,14 +1,14 @@
 <template>
 
   <section>
-    <h1>Admin manager articles page</h1>
+    <h1>Admin manager categories page</h1>
     <nav>
       <ul>
         <li>
-          <nuxt-link to="/admin/articles/add">Add</nuxt-link>
+          <nuxt-link to="/admin/category/add">Add</nuxt-link>
           </li>
         <li>
-          <nuxt-link to="/admin/articles">list</nuxt-link>
+          <nuxt-link to="/admin/category">list</nuxt-link>
           </li>
       </ul>
     </nav>

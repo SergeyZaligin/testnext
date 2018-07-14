@@ -1,5 +1,10 @@
 <template>
-  <h1>Add article</h1>
+  <section>
+    <h1>Add article</h1>
+    <form>
+
+    </form>
+  </section>
 </template>
 
 <script>
