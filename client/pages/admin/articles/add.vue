@@ -12,11 +12,11 @@
       <textarea v-model="preview" name="preview" placeholder="preview"></textarea><br>
       <textarea v-model="seoPreview" name="seoPreview" placeholder="seoPreview"></textarea><br>
       <input type="text" v-model="imageThubnail" name="imageThubnail" placeholder="imageThubnail"><br>
-      <select name="categories">
+      <select name="categories" v-model="selectCategory">
         <option
         v-for="category of categories.categories"
         :key="category._id"
-        value="`${category.id}`"
+        :value="category._id"
         >
         {{ category.name }}
         </option>
@@ -44,6 +44,7 @@ export default {
       seoPreview: '',
       imageThubnail: '',
       text: '',
+      selectCategory: '',
       token: this.$store.getters.user
     }
   },
@@ -62,15 +63,20 @@ export default {
       const article = {
         visible: this.visible,
         sort: this.sort,
-        name: this.name,
+        title: this.title,
         slug: this.slug,
         description: this.description,
         keywords: this.keywords,
+        preview: this.preview,
+        seoPreview: this.seoPreview,
+        imageThubnail: this.imageThubnail,
+        text: this.text,
+        selectCategory: this.selectCategory,
         token: this.token
       }
-      this.$store.dispatch('addArticle', article)
-      this.$router.push('/admin/article/list');
-      //console.log('category add ', category);
+      //this.$store.dispatch('addArticle', article)
+      //this.$router.push('/admin/article/list');
+      console.log('Article add ', article);
       //console.log('params ', para);
     }
   },
