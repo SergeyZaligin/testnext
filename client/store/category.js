@@ -34,19 +34,44 @@ export default {
 
     async addCategory ({commit, getters}, payload) {
       const category = await axios.post(`http://localhost:3001/api/category/create`, payload, {
-      headers: { Authorization: payload.token }
-  });
+        headers: { Authorization: payload.token }
+      });
       console.log(category);
       commit('createCategory', payload);
     },
-
-
     async getCategories ({ commit }, payload) {
 
       const resultCategories = [];
 
       try {
-        const categories = await axios.get(`http://localhost:3001/api/category/`);
+        const categories = await axios.get(`http://localhost:3001/api/category`, {
+          headers: { Authorization: payload }
+      });
+
+        commit('loadCategories', {categories: categories.data});
+        console.log("resultCategories", categories.data);
+
+      } catch (error) {
+        console.log(error.message);
+        throw error
+      }
+    },
+    async removeCategory ({ commit }, { token, id }) {
+      const categories = await axios.delete(`http://localhost:3001/api/category/${id}`, {
+          headers: { Authorization: token }
+      });
+      commit('loadCategories', {categories: categories.data});
+      console.log("resultCategories", categories.data);
+    },
+
+    async updateCategory ({ commit }, payload) {
+
+      const resultCategories = [];
+
+      try {
+        const categories = await axios.put(`http://localhost:3001/api/category/${payload.id}`, payload, {
+          headers: { Authorization: payload.token }
+      });
 
         commit('loadCategories', {categories: categories.data});
         console.log("resultCategories", categories.data);
