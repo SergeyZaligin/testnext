@@ -48,7 +48,7 @@ export default {
       }
       this.$store.dispatch('loginUser', user)
         .then(()=>{
-          this.$router.push('/registration')
+          this.$router.push('/')
         })
         .catch(error => {
           console.log(error)
