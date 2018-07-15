@@ -51,7 +51,7 @@ export default {
     us () {
       return this.$store.getters.user
     }
-  },
+  }
 }
 
 </script>
