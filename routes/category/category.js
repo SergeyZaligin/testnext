@@ -6,5 +6,5 @@ const passport = require('passport');
 
 // localhost:3001/api/category/create
 router.post('/create', passport.authenticate('jwt', {session: false}), controller.create);
-
+router.get('/', passport.authenticate('jwt', {session: false}), controller.getAllCategories);
 module.exports = router;

@@ -2,9 +2,15 @@
   <section>
     <h1>Add category</h1>
     <form>
-      <input type="text" v-model="category" placeholder="add category" name="category">
+      <input type="radio" v-model="visible" value="1" name="visible"> Visible
+      <input type="radio" v-model="visible" value="0" name="visible" checked>Hidden<br>
+      <input type="number" v-model="sort" name="sort" id="sort" placeholder="sort"><br>
+      <input type="text" v-model="name" name="name" placeholder="add category"><br>
+      <input type="text" v-model="slug" name="slug" placeholder="slug"><br>
+      <textarea v-model="description" name="description" placeholder="description"></textarea><br>
+      <textarea v-model="keywords" name="keywords" placeholder="keywords"></textarea><br>
     </form>
-    <button type="submit">Add category</button>
+    <button type="submit" @click="onSubmit()">Add category</button>
   </section>
 </template>
 
@@ -14,9 +20,38 @@ export default {
   layout: 'admin',
   data () {
     return {
-      category: category
+      visible: 0,
+      sort: 1,
+      name: '',
+      slug: '',
+      description: '',
+      keywords: ''
     }
-  }
+  },
+
+  methods: {
+    onSubmit () {
+
+      const category = {
+        visible: this.visible,
+        sort: this.sort,
+        name: this.name,
+        slug: this.slug,
+        description: this.description,
+        keywords: this.keywords,
+        token: this.$store.getters.user
+      }
+      this.$store.dispatch('addCategory', category)
+      this.$router.push('/admin/category/list');
+      //console.log('category add ', category);
+      //console.log('params ', para);
+    }
+  },
+  computed: {
+    us () {
+      return this.$store.getters.user
+    }
+  },
 }
 
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Welcome to admin panel</h1>
+    <p>{{ us }}</p>
     <nav>
       <ul>
         <li>
@@ -15,6 +16,9 @@
         <li>
           <nuxt-link to="/admin/articles">Articles managment</nuxt-link>
         </li>
+        <li>
+          <nuxt-link to="/admin/category">Category managment</nuxt-link>
+        </li>
       </ul>
     </nav>
     <nuxt/>
@@ -23,7 +27,12 @@
 
 <script>
 export default {
-  middleware: 'authadmin'
+  middleware: 'authadmin',
+  computed: {
+    us () {
+      return this.$store.getters.user
+    }
+  }
 }
 </script>
 

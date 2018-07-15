@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 v-if="us">Login {{ us }}</h1>
+    <p v-if="us">Login {{ us }}</p>
     <nav>
       <ul>
         <li>

@@ -14,11 +14,13 @@ export default {
 
   state: {
     user: null,
-    role: ''
+    role: '',
+    id: ''
   },
 
   mutations: {
     setUser(state, payload) {
+      state.role = payload.id;
       state.user = payload.token;
       state.role = payload.role;
     }
@@ -50,8 +52,9 @@ export default {
         })
         console.log(user);
         commit('setUser', {
-           token: user.data.token,
-            role: user.data.role
+            token: user.data.token,
+            role: user.data.role,
+            id: user.id
         });
 
       } catch (error) {
@@ -67,7 +70,11 @@ export default {
           password
         });
         console.log(user);
-        commit('setUser', user.data.token);
+        commit('setUser', {
+          token: user.data.token,
+          role: user.data.role,
+          id: user.id
+      });
       } catch (error) {
         console.log(error.message);
         throw error

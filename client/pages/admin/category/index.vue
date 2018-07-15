@@ -8,7 +8,7 @@
           <nuxt-link to="/admin/category/add">Add</nuxt-link>
           </li>
         <li>
-          <nuxt-link to="/admin/category">list</nuxt-link>
+          <nuxt-link to="/admin/category/list">list</nuxt-link>
           </li>
       </ul>
     </nav>

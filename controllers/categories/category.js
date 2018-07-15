@@ -23,3 +23,23 @@ module.exports.create = async function (req, res) {
         errorHandler(res, error)
     }
 }
+
+
+/**
+ * Get all categories
+ * @param {*} req 
+ * @param {*} res 
+ */
+module.exports.getAllCategories = async function (req, res) {
+
+    try {
+      const categories = await Category
+        .find({})
+      res.status(200).json({
+        categories
+    });
+    } catch (error) {
+      errorHandler(res, error);
+    }
+  
+  }

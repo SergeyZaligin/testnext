@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import localStorage from '../plugins/localStorage';
 import createPersistedState from 'vuex-persistedstate';
 import * as Cookie from 'js-cookie';
 
@@ -32,17 +32,25 @@ export default {
 
   actions: {
 
-    async createAd ({commit, getters}, payload) {
-
+    async addCategory ({commit, getters}, payload) {
+      const category = await axios.post(`http://localhost:3001/api/category/create`, payload, {
+      headers: { Authorization: payload.token }
+  });
+      console.log(category);
+      commit('createCategory', payload);
     },
 
 
     async getCategories ({ commit }, payload) {
+
       const resultCategories = [];
+
       try {
-        const categories = await axios.get(`http://localhost:3001/api/categories/`);
+        const categories = await axios.get(`http://localhost:3001/api/category/`);
+
         commit('loadCategories', {categories: categories.data});
         console.log("resultCategories", categories.data);
+
       } catch (error) {
         console.log(error.message);
         throw error
@@ -58,3 +66,4 @@ export default {
   }
 
 }
+

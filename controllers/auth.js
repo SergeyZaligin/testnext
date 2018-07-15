@@ -25,7 +25,8 @@ module.exports.login = async function(req, res) {
       }, keys.secretKey, { expiresIn: 60 * 60 })
       res.status(200).json({
         token: `Bearer ${token}`,
-        role: candidate.role
+        role: candidate.role,
+        id: candidate._id
       })
     } else {
       res.status(401).json({
