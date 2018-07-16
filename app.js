@@ -8,6 +8,8 @@ const authRoutes = require('./routes/auth')
 const articlesRoutes = require('./routes/articles/articles')
 const articleRoutes = require('./routes/articles/article')
 const categoryRoutes = require('./routes/category/category')
+const agencyRoutes = require('./routes/agencys/agency')
+const cityRoutes = require('./routes/citys/city')
 
 const app = express()
 
@@ -38,5 +40,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/articles', articlesRoutes)
 app.use('/api/article', articleRoutes)
 app.use('/api/category', categoryRoutes)
+app.use('/api/agency', agencyRoutes)
+app.use('/api/city', cityRoutes)
 
 module.exports = app
