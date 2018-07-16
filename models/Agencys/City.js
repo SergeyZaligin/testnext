@@ -8,13 +8,18 @@ const citySchema = new Schema({
         required: true
     },
 
-    district: [
-        {
-            name: {
-                type: String
-            }
-        }
-    ]
+    district: {
+        type: [districtSchema]
+    }
+
+})
+
+const districtSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    }
 })
 
 module.exports = mongoose.model('citys', citySchema)
+module.exports = mongoose.model('districts', districtSchema)

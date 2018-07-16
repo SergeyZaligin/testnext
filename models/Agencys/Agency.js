@@ -7,10 +7,13 @@ const agencySchema = new Schema({
         type: String,
         required: true
     },
-    district: {
-        ref: 'district',
+
+    districs: {
+        ref: 'districts',
         type: Schema.Types.ObjectId
     }
 })
 
-module.exports = mongoose.model(' agencys',  agencySchema)
+
+
+module.exports = mongoose.model('agencys',  agencySchema)
