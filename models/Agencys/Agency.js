@@ -8,7 +8,7 @@ const agencySchema = new Schema({
         required: true
     },
 
-    districs: {
+    district: {
         ref: 'districts',
         type: Schema.Types.ObjectId
     }

@@ -9,13 +9,12 @@ const errorHandler = require('../../utils/errorHandler');
  */
 module.exports.create = async function (req, res) {
     const city = new City({
-        visible: req.body.visible,
         name: req.body.name,
-        slug: req.body.slug,
-        description: req.body.description,
-        keywords: req.body.keywords,
-        sort: req.body.sort,
-        user: req.user.id
+        district: [
+            {
+                title: req.body.title
+            }
+        ]
     })
     try {
         await city.save()
