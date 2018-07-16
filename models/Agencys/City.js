@@ -22,5 +22,5 @@ const citySchema = new Schema({
 
 
 
-module.exports = mongoose.model('citys', citySchema)
-//module.exports = mongoose.model('districts', districtSchema)
+module.exports = mongoose.model('citys', citySchema);
+//module.exports = mongoose.model('districts', districtSchema);

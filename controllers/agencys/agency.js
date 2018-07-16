@@ -9,13 +9,9 @@ const errorHandler = require('../../utils/errorHandler');
  */
 module.exports.create = async function (req, res) {
     const agency = new Agency({
-        visible: req.body.visible,
         name: req.body.name,
-        slug: req.body.slug,
-        description: req.body.description,
-        keywords: req.body.keywords,
-        sort: req.body.sort,
-        user: req.user.id
+        district: req.body.district,
+        
     })
     try {
         await agency.save()

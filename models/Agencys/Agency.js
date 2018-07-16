@@ -9,7 +9,7 @@ const agencySchema = new Schema({
     },
 
     district: {
-        ref: 'districts',
+        ref: 'citys.district',
         type: Schema.Types.ObjectId
     }
 })
