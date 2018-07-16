@@ -17,6 +17,7 @@ module.exports.create = async function (req, res) {
         ]
     })
     try {
+        console.log(city);
         await city.save()
         res.status(201).json(city)
     } catch (error) {
