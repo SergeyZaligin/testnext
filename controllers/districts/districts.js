@@ -19,3 +19,19 @@ module.exports.create = async function (req, res) {
         errorHandler(res, error)
     }
 }
+
+/**
+ * Add get all district
+ * @param {*} req 
+ * @param {*} res 
+ */
+module.exports.getAllDistricts = async function (req, res) {
+    const districts = await District.find({})
+
+    try {
+        console.log(districts);
+        res.status(201).json(districts)
+    } catch (error) {
+        errorHandler(res, error)
+    }
+}
