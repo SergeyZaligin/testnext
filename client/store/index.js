@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 import user from './user';
 import article from './article';
 import category from './category';
+import district from './district';
 
 Vue.use(Vuex);
 
@@ -12,7 +13,8 @@ const store = () =>
     modules: {
       user,
       article,
-      category
+      category,
+      district
     }
   });
 
