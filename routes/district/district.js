@@ -1,6 +1,6 @@
 const express = require('express');
 
-const controller = require('../../controllers/citys/city');
+const controller = require('../../controllers/districts/districts');
 const router = express.Router();
 //const passport = require('passport');
 

@@ -3,19 +3,18 @@ const District = require('../../models/Agencys/District');
 const errorHandler = require('../../utils/errorHandler');
 
 /**
- * Add agency
+ * Add district
  * @param {*} req 
  * @param {*} res 
  */
 module.exports.create = async function (req, res) {
-    const agency = new Agency({
-        name: req.body.name,
-        district: req.body.district,
-        
+    const district = new District({
+        name: req.body.name
     })
     try {
-        await agency.save()
-        res.status(201).json(agency)
+        console.log(district);
+        await district.save()
+        res.status(201).json(district)
     } catch (error) {
         errorHandler(res, error)
     }
