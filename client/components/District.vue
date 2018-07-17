@@ -1,8 +1,10 @@
 <template>
   <section class="container">
-    <div v-for="district of districts" :key="district._id">
+    <nav>
+      <nuxt-link v-for="district of districts" :to="`/agency/${ district._id }`" :key="district._id">
       {{district.name}}
-    </div>
+      </nuxt-link>
+    </nav>
   </section>
 </template>
 
