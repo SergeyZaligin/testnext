@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <h1>Welcome to admin panel</h1>
-    <p>{{ us }}</p>
+  <div id="wrapp">
+    <header class="header">
+      <div class="container">
+        <!-- <p v-if="us">Login {{ us }}</p> -->
+        Header
+      </div>
+    </header>
     <nav>
       <ul>
         <li>
@@ -21,7 +25,18 @@
         </li>
       </ul>
     </nav>
-    <nuxt/>
+    <main class="content" role="main">
+      <div class="container">
+        <h1>Welcome to admin panel</h1>
+        <!-- <p>{{ us }}</p> -->
+        <nuxt/>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        @ FOOTER
+      </div>
+    </footer>
   </div>
 </template>
 

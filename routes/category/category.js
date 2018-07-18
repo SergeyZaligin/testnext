@@ -5,7 +5,7 @@ const router = express.Router();
 const passport = require('passport');
 
 // localhost:3001/api/category/create
-router.get('/', passport.authenticate('jwt', {session: false}), controller.getAllCategories);
+router.get('/', controller.getAllCategories);
 router.post('/create', passport.authenticate('jwt', {session: false}), controller.create);
 router.delete('/:id', passport.authenticate('jwt', {session: false}), controller.remove);
 router.put('/:id', passport.authenticate('jwt', {session: false}), controller.update);

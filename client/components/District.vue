@@ -1,6 +1,6 @@
 <template>
-  <section class="container">
-    <nav>
+  <section class="districts">
+    <nav class="districts__links">
       <nuxt-link v-for="district of districts" :to="`/agency/${ district._id }`" :key="district._id">
       {{district.name}}
       </nuxt-link>
@@ -33,6 +33,12 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+.districts {
 
+  &__links{
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>

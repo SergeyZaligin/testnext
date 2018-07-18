@@ -13,6 +13,7 @@
 }
 
 .container {
+  padding: 0 15px;
   width: 100%;
   max-width: 1170px;
   min-width: 320px;
@@ -20,11 +21,30 @@
 }
 
 .header {
+  background-color: #d3ced4;
+}
 
+.main-navigation{
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .content {
   flex: 1;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .main-content{
+      outline: 1px solid #000;
+      width: 65%;
+    }
+    .sidebar{
+      outline: 1px solid #000;
+      width: 33%;
+    }
+  }
 }
 
 .footer {

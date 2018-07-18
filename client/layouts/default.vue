@@ -3,36 +3,31 @@
     <header class="header">
       <div class="container">
         <!-- <p v-if="us">Login {{ us }}</p> -->
-        <nav>
-          <ul>
-            <li>
-              <nuxt-link to="/">Home</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/login">Login</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/about">About</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/registration">Registration</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/admin">Admin</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/articles">Articles</nuxt-link>
-            </li>
-            <li>
-              <a @click="logout($event)" href="#">Logout</a>
-            </li>
-          </ul>
-        </nav>
+        Header
       </div>
     </header>
+    <nav class="main-navigation" role="navigation">
+      <div class="container">
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/articles">Articles</nuxt-link>
+        <nuxt-link to="/login">Login</nuxt-link>
+        <nuxt-link to="/registration">Registration</nuxt-link>
+        <nuxt-link to="/admin">Admin</nuxt-link>
+        <a @click="logout($event)" href="#">Logout</a>
+      </div>
+    </nav>
     <main class="content" role="main">
       <div class="container">
-        <nuxt/>
+        <section class="main-content">
+          <nuxt/>
+        </section>
+        <aside class="sidebar">
+          <section class="widget">
+            <h3 class="widget__title">Выбрать р-н</h3>
+            <app-district></app-district>
+          </section>
+        </aside>
       </div>
     </main>
     <footer class="footer">
@@ -45,13 +40,16 @@
 
 
 
-<style lang="scss">
-
-</style>
 
 <script>
 
+import district from '../components/District';
+
 export default {
+
+  components: {
+    appDistrict: district
+  },
 
   data () {
     return {
@@ -79,3 +77,5 @@ export default {
 }
 
 </script>
+
+<style lang="scss"></style>
