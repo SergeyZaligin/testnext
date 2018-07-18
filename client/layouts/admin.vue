@@ -25,7 +25,7 @@
         </li>
       </ul>
     </nav>
-    <main class="content" role="main">
+    <main class="content-admin" role="main">
       <div class="container">
         <h1>Welcome to admin panel</h1>
         <!-- <p>{{ us }}</p> -->
