@@ -2,7 +2,7 @@
   <div id="wrapp">
     <header class="header">
       <div class="container">
-        <p v-if="us">Login {{ us }}</p>
+        <!-- <p v-if="us">Login {{ us }}</p> -->
         <nav>
           <ul>
             <li>
