@@ -6,24 +6,14 @@
         Header
       </div>
     </header>
-    <nav>
-      <ul>
-        <li>
-          <nuxt-link to="/admin">Home admin</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/login">Login</nuxt-link>
-        </li>
-         <li>
-          <nuxt-link to="/about">About</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/admin/articles">Articles managment</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/admin/category">Category managment</nuxt-link>
-        </li>
-      </ul>
+    <nav class="main-navigation" role="navigation">
+      <div class="container">
+        <nuxt-link to="/admin">Home admin</nuxt-link>
+        <nuxt-link to="/login">Login</nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/admin/articles">Articles managment</nuxt-link>
+        <nuxt-link to="/admin/category">Category managment</nuxt-link>
+      </div>
     </nav>
     <main class="content-admin" role="main">
       <div class="container">
