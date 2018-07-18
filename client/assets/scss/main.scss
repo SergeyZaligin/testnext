@@ -1,4 +1,4 @@
-$bgColor: #fff;
+@import "var";
 
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -17,3 +17,26 @@ html {
   background-color: $bgColor;
 }
 
+#wrapp{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  color: #000;
+  background: #3C3F41;
+}
