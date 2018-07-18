@@ -2,6 +2,26 @@ module.exports = {
 
   plugins: [{ src: '~/plugins/localStorage.js' }],
 
+  module: {
+    rules: [
+      // ... other rules omitted
+
+      // this will apply to both plain `.scss` files
+      // AND `<style lang="scss">` blocks in `.vue` files
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
+  css: [
+    //'~assets/css/main.css',
+    { src: '~assets/scss/main.scss', lang: 'scss' }
+  ],
 /*
   ** Headers of the page
   */
