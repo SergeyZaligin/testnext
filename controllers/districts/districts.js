@@ -9,7 +9,8 @@ const errorHandler = require('../../utils/errorHandler');
  */
 module.exports.create = async function (req, res) {
     const district = new District({
-        name: req.body.name
+        name: req.body.name,
+        slug: req.body.slug
     })
     try {
         console.log(district);

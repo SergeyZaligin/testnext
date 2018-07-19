@@ -1,7 +1,7 @@
 <template>
   <section class="districts">
     <nav class="districts__links">
-      <nuxt-link v-for="district of districts" :to="`/agency/${ district._id }`" :key="district._id">
+      <nuxt-link v-for="district of districts" :to="`/agencys/district/${ district.slug }`" :key="district._id">
       {{district.name}}
       </nuxt-link>
     </nav>

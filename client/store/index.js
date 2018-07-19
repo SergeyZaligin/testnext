@@ -5,6 +5,7 @@ import user from './user';
 import article from './article';
 import category from './category';
 import district from './district';
+import agency from './agency';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,8 @@ const store = () =>
       user,
       article,
       category,
-      district
+      district,
+      agency
     }
   });
 

@@ -10,6 +10,7 @@ const errorHandler = require('../../utils/errorHandler');
 module.exports.create = async function (req, res) {
     const agency = new Agency({
         name: req.body.name,
+        slug: req.body.slug,
         district: req.body.district,
         
     })
@@ -28,7 +29,7 @@ module.exports.create = async function (req, res) {
  */
 module.exports.getAllAgencysByDistrictId = async function (req, res) {
     const agencys = await Agency.find({
-        district: req.params.id
+        district: req.params.slug
     })
 
     try {

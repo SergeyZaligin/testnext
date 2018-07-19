@@ -7,10 +7,14 @@ const agencySchema = new Schema({
         type: String,
         required: true
     },
-
+    slug: {
+        type: String,
+        unique: true,
+        required: true
+    },
     district: {
         ref: 'districts',
-        type: Schema.Types.ObjectId
+        type: String,
     }
 })
 
