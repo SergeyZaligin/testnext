@@ -18,6 +18,7 @@ module.exports.create = async function (req, res) {
         preview: req.body.preview,
         site: req.body.site,
         district: req.body.district,
+        user: req.user.id
     })
     try {
         await agency.save()
@@ -33,8 +34,9 @@ module.exports.create = async function (req, res) {
  * @param {*} res 
  */
 class Review {
-    constructor (text){
+    constructor (text, user){
         this.text = text;
+        this.user = user;
     }
 }
 module.exports.createReview = async function (req, res) {
@@ -43,7 +45,7 @@ module.exports.createReview = async function (req, res) {
         district: req.params.id
     });
 
-    agencys.reviews.push(new Review(req.body.text));
+    agencys.reviews.push(new Review(req.body.text, req.user.id));
 
     try {
         await agencys.save()

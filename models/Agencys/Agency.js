@@ -6,10 +6,10 @@ const reviewSchema = new Schema({
         type: Boolean,
         default: 1
     },
-    // user: {
-    //     ref: 'users',
-    //     type: Schema.Types.ObjectId
-    // },
+    user: {
+        ref: 'users',
+        type: Schema.Types.ObjectId
+    },
     text: {
         type: String,
         required: true
@@ -85,6 +85,10 @@ const agencySchema = new Schema({
     district: {
         ref: 'districts',
         type: String,
+    },
+    user: {
+        ref: 'users',
+        type: Schema.Types.ObjectId
     },
     reviews: {
         type: [reviewSchema]
