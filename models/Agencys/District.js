@@ -15,7 +15,8 @@ const districtSchema = new Schema({
         default: ''
     },
     name: {
-        type: String
+        type: String,
+        required: true
     },
     slug: {
         type: String,

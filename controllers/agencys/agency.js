@@ -11,8 +11,13 @@ module.exports.create = async function (req, res) {
     const agency = new Agency({
         name: req.body.name,
         slug: req.body.slug,
+        phone: req.body.phone,
+        metro: req.body.metro,
+        address: req.body.address,
+        email: req.body.email,
+        preview: req.body.preview,
+        site: req.body.site,
         district: req.body.district,
-        
     })
     try {
         await agency.save()
@@ -36,14 +41,13 @@ module.exports.createReview = async function (req, res) {
 
     const agencys = await Agency.findOne({
         district: req.params.id
-    })
+    });
 
-    agencys.reviews = new Review({
-        text: req.body.text,
-    })
+    agencys.reviews.push(new Review(req.body.text));
+
     try {
-        await agency.save()
-        res.status(201).json(agency)
+        await agencys.save()
+        res.status(201).json(agencys)
     } catch (error) {
         errorHandler(res, error)
     }

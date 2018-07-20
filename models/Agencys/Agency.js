@@ -48,27 +48,22 @@ const agencySchema = new Schema({
     },
     site: {
         type: String,
-        default: '',
         required: true
     },
     phone: {
         type: String,
-        default: '',
         required: true
     },
     metro: {
         type: String,
-        default: '',
         required: true
     },
     address: {
         type: String,
-        default: '',
         required: true
     },
     email: {
         type: String,
-        default: '',
         required: true
     },
     preview: {
@@ -82,10 +77,6 @@ const agencySchema = new Schema({
     text: {
         type: String,
         default: ''
-    },
-    user: {
-        ref: 'users',
-        type: Schema.Types.ObjectId
     },
     sort: {
         type: Number,
